@@ -1,0 +1,70 @@
+{
+  "name": "crud-app",
+  "version": "0.0.1",
+  "description": "crud usign MEVN stack",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/server/server.js",
+    "client": "webpack-dev-server --mode development --devtool inline-source-map --hot --history-api-falldback --watch",
+    "server": "nodemon ./src/server/server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pho3niix/FullStack-App.git"
+  },
+  "keywords": [
+    "vue",
+    "node",
+    "stress",
+    "mongo",
+    "express",
+    "learn",
+    "practice"
+  ],
+  "author": "Hugo Costilla",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pho3niix/FullStack-App/issues"
+  },
+  "homepage": "https://github.com/pho3niix/FullStack-App#readme",
+  "dependencies": {
+    "@vue/cli": "^3.10.0",
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "concurrently": "^4.1.2",
+    "cookie-parser": "^1.4.4",
+    "core-js": "^2.6.9",
+    "express": "^4.17.1",
+    "http-errors": "^1.7.3",
+    "mongod": "^2.0.0",
+    "mongoose": "^5.6.9",
+    "morgan": "^1.9.1",
+    "normalize-port": "^1.0.0",
+    "vue": "^2.6.10",
+    "vue-axios": "^2.1.4",
+    "vue-router": "^3.1.2",
+    "vue-style-loader": "^4.1.2",
+    "vuex": "^3.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "babel-preset-vue": "^2.0.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.19.1",
+    "sass": "^1.22.10",
+    "sass-loader": "^7.2.0",
+    "url-loader": "^2.1.0",
+    "vue-loader": "^15.7.1",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.8.0"
+  }
+}
