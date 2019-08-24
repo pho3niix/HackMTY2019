@@ -1,18 +1,18 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-var collectionName = 'Mario_World';
+var collectionName = 'Users';
 
-const MarioSchema = new Schema(
+const UsersSchema = new Schema(
     {
         name: {
             type: String
         },
-        power: {
-            type: Number
+        email: {
+            type: String
         },
-        life: {
-            type: Number
+        password: {
+            type: String
         }
     },
     {
@@ -23,6 +23,6 @@ const MarioSchema = new Schema(
     }
 );
 
-const Mario = mongoose.model(collectionName, MarioSchema);
+const User = mongoose.model(collectionName, UsersSchema);
 
-module.exports = Mario;
+module.exports = User;

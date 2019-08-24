@@ -28,11 +28,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('dist'));
 
+//URL Constante
+const url = '/api/trivia'
+
 //Routes variables
-const rest = require('./routes/index');
+const userRoutes = require('./routes/usersRoutes');
 
 //Routes
-app.use('/api', rest);
+app.use(`${url}/user`, userRoutes);
 
 const port = process.env.PORT || 3100;
 

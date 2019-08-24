@@ -1,18 +1,18 @@
-const marioModel = require('../models/defaultDB');
+const usersSchema = require('../models/usersSchema');
 
-const control = {};
+var usersController = {};
 
-control.greet = (req, res)=>{
+usersController.greet = (req, res)=>{
     res.send("hola desde controladores");
 };
 
 /** Insertar nuevo registro */
-control.newMario = (req, res)=>{
-    const newCharacther = new marioModel(
+usersController.newUser = (req, res)=>{
+    const newCharacther = new usersSchema(
         {
             name: req.body.name,
-            power: req.body.power,
-            life: req.body.life
+            email: req.body.email,
+            password: req.body.password
         }
     );
     newCharacther.save(
@@ -39,8 +39,8 @@ control.newMario = (req, res)=>{
 };
 
 /** Mostrar registros almacenados en la base de datos */
-control.listMario = (req, res)=>{
-    marioModel.find({}).sort({_id: -1}).exec((err, Projects)=>{// sort sirve para traer los ultimos registros insertados
+usersController.listUser = (req, res)=>{
+    usersSchema.find({}).sort({_id: -1}).exec((err, Projects)=>{// sort sirve para traer los ultimos registros insertados
         if(err){
             res.send(err);
         }else{
@@ -50,15 +50,15 @@ control.listMario = (req, res)=>{
 };
 
 /** Actulizar registros por ID*/
-control.upWorld = (req, res)=>{
+usersController.updateUser = (req, res)=>{
     const updateWorld = {
         name: req.body.name,
-        power: req.body.power,
-        life: req.body.life
+        email: req.body.email,
+        password: req.body.password
     };
-    marioModel.updateOne(
+    usersSchema.updateOne(
         {
-            _id: req.body.id
+            id: req.body.id
         },
         updateWorld, (err)=>{
             if(err){
@@ -81,10 +81,10 @@ control.upWorld = (req, res)=>{
 };
 
 /** Borrar registro por ID en la base de datos */
-control.delWorld = (req, res)=>{
-    marioModel.remove(
+usersController.deleteUser = (req, res)=>{
+    usersSchema.remove(
         {
-            _id: req.body.id
+            id: req.body.id
         },
         (err)=>{
             if(err){
@@ -106,4 +106,4 @@ control.delWorld = (req, res)=>{
     );
 };
 
-module.exports = control;
+module.exports = usersController;
