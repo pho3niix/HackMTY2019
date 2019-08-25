@@ -69,7 +69,7 @@
       flex-direction: column;
     }
     .card{
-      width: 100vw; 
+      width: 60vw; 
     }
    .form-registry{
      align-items: center; 
@@ -87,6 +87,8 @@
    }
    .registry{
     display: flex;
-    align-items: center;
+    align-items: right;
     justify-content: center; 
+    flex-direction: column;
    }
+   
