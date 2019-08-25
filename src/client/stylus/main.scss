@@ -30,6 +30,7 @@
       display: flex;
         align-items: center;
         justify-content: center;
+        height: 80vh;
     }
     .form-control{
       height: 4vw;
@@ -47,6 +48,7 @@
       border: #FF3850;
       align-content: center;
       margin-top: 12px;
+      
     }
     .btn-primary:hover{
       background: #e5002d; 
@@ -87,14 +89,28 @@
    }
    .registry{
     display: flex;
-    align-items: right;
+    align-items: center;
     justify-content: center; 
     flex-direction: column;
+   }
+   .container-qt{
+     display: flex;
+     align-content:  center;
+     justify-content: center;
+   }
+   .formulario{
+     align-content: center;
+     justify-content: center;
    }
    //home
    .cards {
      background: #e5002d;
      border-radius: 8px;
-     margin: 100px;
-
+     margin: 100px; 
+   }
+   .costum-control{
+     color: #c80018;
+   }
+   .form-text{
+     text-decoration-color: #c80018;
    }

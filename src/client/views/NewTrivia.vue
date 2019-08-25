@@ -2,7 +2,7 @@
 <div class="container"> 
 <div class="newTrivia">
   <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre de trivia">
-  <button type="submit" class="btn btn-primary" onclick="aparecer()" >Crear</button>
+  <button type="submit" class="btn btn-primary" onclick="aparecer()">Crear</button>
 </div>
 <div class="invisible" id="invisible">
     <trivia />
