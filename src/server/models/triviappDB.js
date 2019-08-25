@@ -8,13 +8,18 @@ const TriviappSchema = new Schema(
         question: {
             type: String
         },
-        answers:
-            {
-                optionA: String,
-                optionB: String,
-                optionC: String,
-                optionD: String
-            }
+        optiona:{
+            type: String
+        },
+        optionb:{
+            type: String
+        },
+        optionc:{
+            type: String
+        },
+        optiond:{
+            type: String
+        }
     },
     {
         collection: collectionName

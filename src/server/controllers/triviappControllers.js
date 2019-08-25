@@ -1,33 +1,21 @@
 const triviappModel = require('../models/triviappDB');
 
-const controls = {};
+const triviaControl = {};
 
-controls.test = (req, res)=>{
+triviaControl.test = (req, res)=>{
     res.send('hola desde controladores');
 }
 
-controls.newTrivia = (req, res)=>{
-
-    // var optionA = ;
-
-    // var optionB = ;
-    
-    // var optionC = ;
-
-    // var optionD = ;
+// insertar nueva trivia
+triviaControl.newTrivia = (req, res)=>{
 
     const newQuestion = new triviappModel(
         {
             question: req.body.question,
-            answers:[
-                {
-                    optionA: req.body.optionA,
-                    optionB: req.body.optionB,
-                    optionC: req.body.optionC,
-                    optionD: req.body.optionD
-                }
-            ]
-                
+            optiona: req.body.optiona,
+            optionb: req.body.optionb,
+            optionc: req.body.optionc,
+            optiond: req.body.optiond
         }
     );
     newQuestion.save(
@@ -41,7 +29,7 @@ controls.newTrivia = (req, res)=>{
                     }
                 );
             }else{
-                res.status(200).json(
+                return res.status(200).json(
                     {
                         success: true,
                         message: 'Successfully save new question',
@@ -52,6 +40,78 @@ controls.newTrivia = (req, res)=>{
             }
         }
     );
+};
+
+/**Mostrar registros de trivias */
+triviaControl.getTrivias = (req, res)=>{
+    triviappModel.find({}).sort({_id:-1}).exec(
+        (err, triviapp)=>{
+            if(err){
+                res.send(err);
+            }else{
+                res.send(triviapp)
+            }
+        }
+    );
+};
+
+// Actualizar trivias por ID
+triviaControl.upTrivias = (req, res)=>{
+    const updateTrivia = {
+        question: req.body.question,
+        optiona: req.body.optiona,
+        optionb: req.body.optionb,
+        optionc: req.body.optionc,
+        optiond: req.body.optiond
+    };
+
+    triviappModel.updateOne(
+        {
+            _id: req.body.id
+        },
+        updateTrivia, (err, triviapp)=>{
+            if(err){
+                return res.status(400).json(
+                    {
+                        success: false,
+                        message: 'could not update'
+                    }
+                );
+            }else{
+                return res.status(200).json(
+                    {
+                        success: true,
+                        message: 'Successfully updated'
+                    }
+                );
+            }
+        }
+    );
 }
 
-module.exports = controls;
+triviaControl.deleteTrivia = (req, res)=>{
+    triviappModel.deleteOne(
+        {
+            _id: req.params.id
+        },
+        (err)=>{
+            if(err){
+                return res.status(400).json(
+                    {
+                        success: false,
+                        message: 'could not delete'
+                    }
+                )
+            }else{
+                return res.status(200).json(
+                    {
+                        success: true,
+                        message: 'Successfully'
+                    }
+                )
+            }
+        }
+    )
+};
+
+module.exports = triviaControl;
