@@ -1,8 +1,8 @@
 <template>
 <div class="home">
-    <div class="card" style="width:18rem;">
+    <div class="cards" style="width:50vw;">
         <div class="card-body">
-            <h2>Trivias</h2>
+            <h2 class="title-trivias">Trivias</h2>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-controls mr-sm-2" type="text" placeholder="Search">
             </form>
