@@ -1,13 +1,13 @@
-const triviappModel = require('../models/triviappDB');
+const triviappModel = require('../models/questionsDB');
 
-const triviaControl = {};
+const questionControl = {};
 
-triviaControl.test = (req, res)=>{
+questionControl.test = (req, res)=>{
     res.send('hola desde controladores');
 }
 
 // insertar nueva trivia
-triviaControl.newTrivia = (req, res)=>{
+questionControl.newQuestion = (req, res)=>{
 
     const newQuestion = new triviappModel(
         {
@@ -43,7 +43,7 @@ triviaControl.newTrivia = (req, res)=>{
 };
 
 /**Mostrar registros de trivias */
-triviaControl.getTrivias = (req, res)=>{
+questionControl.getQuestion = (req, res)=>{
     triviappModel.find({}).sort({_id:-1}).exec(
         (err, triviapp)=>{
             if(err){
@@ -56,7 +56,7 @@ triviaControl.getTrivias = (req, res)=>{
 };
 
 // Actualizar trivias por ID
-triviaControl.upTrivias = (req, res)=>{
+questionControl.upQuestion = (req, res)=>{
     const updateTrivia = {
         question: req.body.question,
         optiona: req.body.optiona,
@@ -89,7 +89,7 @@ triviaControl.upTrivias = (req, res)=>{
     );
 }
 
-triviaControl.deleteTrivia = (req, res)=>{
+questionControl.deleteQuestion = (req, res)=>{
     triviappModel.deleteOne(
         {
             _id: req.params.id
@@ -114,4 +114,4 @@ triviaControl.deleteTrivia = (req, res)=>{
     )
 };
 
-module.exports = triviaControl;
+module.exports = questionControl;

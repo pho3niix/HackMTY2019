@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-var collectionName = 'triviapp';
+var collectionName = 'questions';
 
-const TriviappSchema = new Schema(
+const answerSchema = new Schema(
     {
-        question: {
+        question:{
             type: String
         },
         optiona:{
@@ -29,6 +29,6 @@ const TriviappSchema = new Schema(
     }
 );
 
-const Triviapp = mongoose.model(collectionName, TriviappSchema);
+const answer = mongoose.model(collectionName, answerSchema);
 
-module.exports = Triviapp;
+module.exports = answer;
