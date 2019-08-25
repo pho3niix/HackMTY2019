@@ -33,9 +33,11 @@ const url = '/api/trivia'
 
 //Routes variables
 const userRoutes = require('./routes/usersRoutes');
+const triviappRoutes = require('./routes/triviappRoute');
 
 //Routes
 app.use(`${url}/user`, userRoutes);
+app.use(`${url}/questions`, triviappRoutes);
 
 const port = process.env.PORT || 3100;
 
