@@ -38,8 +38,8 @@ const triviasRoutes = require('./routes/triviaRoute');
 
 //Routes
 app.use(`${url}/user`, userRoutes);
-app.use(`${url}/questions`, questionsRoutes);
-app.use(`${url}/trivia`, triviasRoutes);
+app.use(`${url}/answers`, questionsRoutes);
+app.use(`${url}/questions`, triviasRoutes);
 
 const port = process.env.PORT || 3100;
 
