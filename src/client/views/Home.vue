@@ -1,7 +1,6 @@
 <template>
-    <div class="home">
-        <hello msg="MEVN STACK" />
-        <h3>{{ mensaje }}</h3>
+    <div class="card" style="width:18rem;">
+        <hello  />
     </div>
 </template>
 
@@ -22,7 +21,7 @@
 </script>
 
 <style lang="scss" scoped>
-    .home{
+    .card{
         display: flex;
         align-items: center;
         justify-content: center;

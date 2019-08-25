@@ -1,8 +1,11 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
-import notf from './components/notFound.vue';
-import About from './views/About.vue';
+import notf from './components/NotFound.vue';
+import Trivia from './components/Trivia.vue';
+import Login from './views/Login.vue';
+import NewTrivia from './views/NewTrivia.vue';
+import Registry from './views/Registry.vue';
 
 Vue.use(Router);
 
@@ -29,11 +32,35 @@ export default new Router({
             redirect: '/NotFound'
         },
         {
-            path: '/about',
-            name: 'about',
-            component: About,
+            path: '/trivia',
+            name: 'trivia',
+            component: Trivia,
             meta: {
-                title: 'About'
+                title: 'Trivia'
+            }
+        },
+        {
+            path: '/login',
+            name: 'login',
+            component: Login,
+            meta: {
+                title: 'Login'
+            }
+        },
+        {
+            path: '/newTrivia',
+            name: 'newTrivia',
+            component: NewTrivia,
+            meta: {
+                title: 'NewTrivia'
+            }
+        },
+        {
+            path: '/registry',
+            name: 'registry',
+            component: Registry,
+            meta: {
+                title: 'Registry'
             }
         }
     ]

@@ -1,0 +1,92 @@
+  #nav a.router-link-exact-active {
+        color:#FF3850;;
+    }
+    .navbar li a:hover{
+      color:  #e5002d;
+    }
+    a{
+        font-size: 18px;
+    }
+    .navbar{
+      background: #ffffff;
+    }
+    .nav-link{
+        color: #000000;
+    }
+   .card{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .newTrivia{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 60vw;
+    }
+    .login{
+      display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .form-control{
+      height: 4vw;
+    }
+    .container{
+      display: flex;
+      align-items: center;
+      justify-content: center; 
+      flex-direction: column;
+    }
+    //btn
+    .btn{
+      background: #FF3850;
+      border-radius: 8px;
+      border: #FF3850;
+      align-content: center;
+      margin-top: 12px;
+    }
+    .btn-primary:hover{
+      background: #e5002d; 
+    }
+    .btn-primary:active, .btn-primary:focus{
+      background: #c80018 !important;
+    }
+    .invisible{
+      display: none;
+    }
+    .visible{
+      display: block !important;
+    }
+
+    //trivia
+    .trivia{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .card{
+      width: 100vw; 
+    }
+   .form-registry{
+     align-items: center; 
+     width: 40vw;
+     height: 4vw;
+     border-bottom: #000000 solid 1px;
+     &:focus{
+       outline: none;
+     }
+   }
+   .container-registry{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+   }
+   .registry{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+   }
