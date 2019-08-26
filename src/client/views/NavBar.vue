@@ -15,6 +15,9 @@
                       <li class="nav-item">
                       <router-link class="nav-link" to="/registry">Registro</router-link>
                       </li>
+                      <li class="nav-item">
+                      <router-link class="nav-link" to="/mesa">MESA</router-link>
+                      </li>
                   </ul>
                 </div>
     </nav>

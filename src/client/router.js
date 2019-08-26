@@ -6,6 +6,7 @@ import Trivia from './components/Trivia.vue';
 import Login from './views/Login.vue';
 import NewTrivia from './views/NewTrivia.vue';
 import Registry from './views/Registry.vue';
+import mesa from './views/mesa.vue';
 
 Vue.use(Router);
 
@@ -61,6 +62,14 @@ export default new Router({
             component: Registry,
             meta: {
                 title: 'Registry'
+            }
+        },
+        {
+            path: '/mesa',
+            name: 'mesa',
+            component: mesa,
+            meta: {
+                title: 'MESA'
             }
         }
     ]
