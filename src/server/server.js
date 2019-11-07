@@ -9,12 +9,18 @@ const app = express();
 // const normalizePort = require('normalize-port');
 
 //Set up default mongoose connection
-// var mongoDB = 'mongodb://localhost:27017/users';//base de datos local
-var mongoDB = 'mongodb+srv://ph03nix:qbZS0YnYJEacAMbk@cluster0-srdla.mongodb.net/users?retryWrites=true&w=majority';//conexion remota
-mongoose.connect(mongoDB, {useNewUrlParser: true}, console.log('success connection'));
-mongoose.Promise = global.Promise;// Get Mongoose to use the global promise library
-var db = mongoose.connection;//Get the default connection
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));//Bind connection to error event (to get notification of connection errors)
+var mongoDB = 'mongodb://localhost:27017/users';//base de datos local
+mongoose.connect(
+    mongoDB,
+    {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true},
+    (err)=>{
+        if(err){
+            console.log(err)
+        }else{
+            console.log('Success conected')
+        }
+    }
+);
 
 //Middleware
 app.use(cors());
@@ -38,8 +44,8 @@ const triviasRoutes = require('./routes/triviaRoute');
 
 //Routes
 app.use(`${url}/user`, userRoutes);
-app.use(`${url}/answers`, questionsRoutes);
-app.use(`${url}/questions`, triviasRoutes);
+app.use(`${url}/questions`, questionsRoutes);
+app.use(`${url}/trivia`, triviasRoutes);
 
 const port = process.env.PORT || 3100;
 

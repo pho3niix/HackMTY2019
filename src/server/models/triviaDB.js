@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
-const questions = mongoose.model('questions');
+// const questions = mongoose.model('questions');
 
 var collectionName = 'triviapp';
 
@@ -11,7 +11,7 @@ const triviappSchema = new Schema(
             type: Schema.Types.ObjectId,
             ref: 'questions'
         }
-    }
+    },
 );
 
 const triviapp = mongoose.model(collectionName, triviappSchema)
